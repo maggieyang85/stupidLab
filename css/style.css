@@ -1,0 +1,110 @@
+body{
+    font-family: Microsoft JhengHei;
+}
+
+.content-padding{
+    margin-top : 30px;
+    margin-bottom: 15px; 
+}
+
+.placeA{
+    background-color: #ff9900;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.place-title{
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+.placeB{
+    background-color: #ff9900;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.placeC{
+    background-color: #ff9900;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.address{
+    padding:50px 25px 0px 25px;
+    margin-bottom:0px;
+}
+
+.address-bottom{
+    padding-bottom:20px;
+}
+
+.btn-padding{
+    margin:5px auto;
+ 
+}
+
+a{
+    color: black;    
+}
+a:hover{
+    color: black;    
+    text-decoration:none;
+}
+
+.placeA-btn{
+    margin-bottom:53px;
+}
+
+.placeC-btn{
+    padding-right:20px;
+    padding-left:20px;
+}
+
+.border{
+    border-bottom: solid 1px #000;
+    width: 180px;
+    margin-bottom:15px;
+}
+
+.hot-pic-1{
+    margin-bottom: 30px;
+}
+
+.btn-position{
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
+
+.btn-large{
+    position: relative;
+    display: inline-block;
+}
+
+.hot-pic-2{
+    margin-bottom: 30px;
+}
+
+.footer-box{
+    background-color: #93c47d;
+    height:82px;
+}
+
+.footer{
+    padding-top:25px;
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+    .placeC-address{
+        padding-top:50px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .media{
+        display: flex;
+        justify-content:center;
+        padding-right:125px;
+    }
+}
