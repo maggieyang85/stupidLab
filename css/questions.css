@@ -1,0 +1,46 @@
+
+body{
+    font-family: Microsoft JhengHei;
+}
+
+.img-padding{
+    margin-bottom: 30px;
+}
+
+.title{
+    margin-bottom: 15px;
+}
+
+.questions-row{
+    margin-bottom: 20px;
+}
+
+.box-shade{
+    box-shadow: 3px 5px 20px #ccc;
+}
+
+.submit{
+    margin-bottom: 15px;
+}
+
+.footer-box{
+    background-color: #93c47d;
+    height:82px;
+}
+
+.footer{
+    padding-top:25px;
+}
+
+@media screen and (min-width: 992px){
+    .media{
+        display: flex;
+        justify-content:center;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .mobile-margin{
+        margin-bottom: 20px;
+    }
+}
