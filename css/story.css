@@ -1,0 +1,41 @@
+body{
+    font-family: Microsoft JhengHei;
+}
+
+.story{
+  width: 100%;
+  height: auto;
+}
+
+header{
+  margin-bottom: 30px;
+}
+
+main h2{
+  margin-bottom: 30px;
+}
+
+main .position,.detail{
+  padding-left: 50px;
+  padding-bottom: 15px;
+}
+
+
+footer{
+    padding:25px;
+    background-color: #93c47d;
+    height:82px;
+}
+
+@media screen and (min-width: 992px){
+    .media{
+        display: flex;
+        justify-content:center;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .mobile-margin{
+        margin-bottom: 20px;
+    }
+}
