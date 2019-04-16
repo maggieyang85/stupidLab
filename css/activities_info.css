@@ -1,0 +1,33 @@
+.activity_title{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.activity_detail{
+	margin-bottom: 50px;
+
+}
+
+.activity_cash{
+	background: #f9cb9c;
+	padding: 15px;
+	margin-bottom: 50px;
+}
+
+.btn-orange{
+	background: #FF9900;
+}
+
+span{
+	color: red;
+}
+strong{
+	font-size: 25px
+}
+.intro_title{
+	margin-bottom: 15px
+}
+
+ol{
+	list-style-type: circle;
+}

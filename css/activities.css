@@ -1,0 +1,19 @@
+.info_card{
+	display: flex;
+	margin: 30px 0px;
+	padding: 15px;
+}
+.activity_img{
+	padding: 0px;
+}
+.activity_info{
+	text-align: left;
+	font-size: 16px;
+	background: #FF9900;
+	padding-top: 15px
+}
+
+.btn-center{
+	align-items: center;
+	margin-bottom: 15px;
+}
