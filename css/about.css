@@ -1,0 +1,49 @@
+body{
+    font-family: Microsoft JhengHei;
+}
+
+header{
+  margin-bottom: 30px;
+}
+.door{
+  width: 100%;
+  height: auto;
+}
+
+main h2{
+  margin-bottom: 30px;
+}
+
+main .position,.detail{
+  padding-left: 50px;
+  padding-bottom: 15px;
+}
+
+main h4.detail{
+  padding-left: 100px;
+}
+
+.social-button{
+  height: 50px;
+  width:auto;
+  cursor: pointer;
+}
+
+footer{
+    padding:25px;
+    background-color: #93c47d;
+    height:82px;
+}
+
+@media screen and (min-width: 992px){
+    .media{
+        display: flex;
+        justify-content:center;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .mobile-margin{
+        margin-bottom: 20px;
+    }
+}
