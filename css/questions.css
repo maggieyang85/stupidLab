@@ -21,6 +21,8 @@ body{
 
 .submit{
     margin-bottom: 15px;
+    border: none;
+    background: #ff9900
 }
 
 .footer-box{
