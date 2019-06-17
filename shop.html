@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="icon" href="images/logo.ico">
+		<title>購買</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+	        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	    <script type="text/javascript" src="js/moment.js"></script>
+	    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	    <link rel="stylesheet" type="text/css" href="css/shop.css">
+	    <style src="vuelendar/scss/vuelendar.scss"></style>
+
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse media" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><img src="images/home_black.webp"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="story.html">品牌故事 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="activities.html">遊戲介紹</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="questions.html">常見問題</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">關於我們</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+		</header>
+
+		<div class="container">
+			<!-- 訂購的活動資訊 -->
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+					<br>
+					<div class="card">
+						<div class="card-header"><h5>訂單資訊</h5></div>
+						<div class="card-body">
+							<div class="card-text">
+								<p>活動名稱：</p>
+								<p>日期：</p>
+								<p>時間：</p>
+								<p>人數：</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+
+			<!-- 預約人資料 -->
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+					<br>
+					<div class="card">
+						<div class="card-header"><h5>訂購人資訊</h5></div>
+						<div class="card-body">
+							<div class="card-text">
+								姓名：<input type="text" name="customer_name"><br>
+								電話：<input type="type" name="customer_phone"><br>
+								Email：<input type="type" name="customer_email">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10 text-center">
+					<br>
+					<button class="btn btn-success" data-toggle="modal" data-target="#exampleModal" type="button" name="submit">確認</button>
+					<!-- Modal -->
+					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					  <div class="modal-dialog modal-dialog-centered" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="exampleModalLongTitle">確認訂單資料</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					        ...
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">確定送出</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+		</div>
+	</body>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+				integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+				crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"   
+                integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+				crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+				integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+				crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			$('submit').onclick(){
+
+			}
+		})
+	</script>
+</html>
