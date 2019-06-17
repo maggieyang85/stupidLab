@@ -7,10 +7,29 @@
 		<title>購買</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 	        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-	    <script type="text/javascript" src="js/moment.js"></script>
-	    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"></script>
+	   
+	   <!-- calendar script -->
+	   <!-- jquery JS -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<!-- Bootstrap js -->
+		<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<!-- Propeller textfield js  -->
+		<script type="text/javascript" src="js/node_modules/propellerkit/dist/js/propeller.min.js"></script>
+		<!-- Datepicker moment with locales -->
+		<script type="text/javascript" language="javascript" src="js/node_modules/moment/min/moment-with-locales.js"></script>
+		
+		<!-- Propeller Bootstrap datetimepicker -->
+		<script type="text/javascript" language="javascript" src="js/node_modules/propellerkit-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+		<!--  Google Material icons /
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" type="text/css" href="js/node_modules/propellerkit/dist/css/propeller.min.css">-->
+		<link rel="stylesheet" type="text/css" href="js/node_modules/propellerkit-datetimepicker/css/bootstrap-datetimepicker.css">
+		<link rel="stylesheet" type="text/css" href="js/node_modules/propellerkit-datetimepicker/css/pmd-datetimepicker.css">
 
+	    <!-- Icon CSS -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	    <link rel="stylesheet" type="text/css" href="css/shop.css">
 	    <style src="vuelendar/scss/vuelendar.scss"></style>
@@ -48,6 +67,7 @@
 
 		<div class="container">
 			<!-- 訂購的活動資訊 -->
+			<form action="shop.php" method="post">
 			<div class="row">
 				<div class="col-md-1"></div>
 				<div class="col-md-10">
@@ -56,10 +76,32 @@
 						<div class="card-header"><h5>訂單資訊</h5></div>
 						<div class="card-body">
 							<div class="card-text">
-								<p>活動名稱：</p>
-								<p>日期：</p>
-								<p>時間：</p>
-								<p>人數：</p>
+								活動名稱：
+								<select class="custom-select" name="activity_select">
+									<option selected>Choose...</option>
+									<option value="1">奪命鎖鏈 1 Break Free</option>
+									<option value="2">奪命記憶</option>
+									<option value="3">顛倒之室</option>
+									<option value="3">醉後任務 THE SCHEME</option>
+								</select>
+
+								<br>
+								<div class="row">
+									<div class="col-md-6">
+										日期：
+										<!--Date picker -->
+										<div class="form-group">
+											<input type="text" class="form-control" id="datepicker">
+											<!--<i class="fas fa-calendar-alt"></i>-->
+										</div>
+										
+                					</div>
+                					<div class="col-md-6">
+                						時間：<input type="" name="activity_time">
+                					</div>
+            					</div>
+								<br>
+								人數：<input type="" name="activity_person"><br>
 							</div>
 						</div>
 					</div>
@@ -76,9 +118,9 @@
 						<div class="card-header"><h5>訂購人資訊</h5></div>
 						<div class="card-body">
 							<div class="card-text">
-								姓名：<input type="text" name="customer_name"><br>
-								電話：<input type="type" name="customer_phone"><br>
-								Email：<input type="type" name="customer_email">
+								姓名：<input type="text" id="name" name="customer_name"><br>
+								電話：<input type="text" id="phone" name="customer_phone"><br>
+								Email：<input type="text" id="email" name="customer_email">
 							</div>
 						</div>
 					</div>
@@ -89,8 +131,10 @@
 				<div class="col-md-1"></div>
 				<div class="col-md-10 text-center">
 					<br>
-					<button class="btn btn-success" data-toggle="modal" data-target="#exampleModal" type="button" name="submit">確認</button>
-					<!-- Modal -->
+					
+					<input class="btn btn-success" data-toggle="modal" data-target="#exampleModal" type="button" name="submit" value="確認" onclick="checkReservation()">
+					
+					<!-- Modal 檢查視窗-->
 					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 					  <div class="modal-dialog modal-dialog-centered" role="document">
 					    <div class="modal-content">
@@ -101,11 +145,12 @@
 					        </button>
 					      </div>
 					      <div class="modal-body">
-					        ...
+					        <p id="reservation_info">訂單資料</p>
 					      </div>
 					      <div class="modal-footer">
 					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					        <button type="button" class="btn btn-primary">確定送出</button>
+					        <input class="btn btn-primary name="submit" type="submit" value="確定送出">
+					        <!-- <button type="button" class="btn btn-primary">確定送出</button> -->
 					      </div>
 					    </div>
 					  </div>
@@ -113,24 +158,26 @@
 				</div>
 				<div class="col-md-1"></div>
 			</div>
+			</form> 
 		</div>
 	</body>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-				integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-				crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"   
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"   
                 integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
 				crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-				integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-				crossorigin="anonymous"></script>
-
 	<script type="text/javascript">
-		$(function() {
-			$('submit').onclick(){
-
-			}
-		})
+		//訂單資訊確認
+		function checkReservation(){
+			 var nameValue = document.getElementById("name").value;
+			 var phoneValue = document.getElementById("phone").value;
+			 var emailValue = document.getElementById("email").value;
+			 var dateValue = document.getElementById("datepicker").value;
+    		document.getElementById("reservation_info").innerHTML = nameValue + '<br>' + phoneValue + '<br>' + emailValue + '<br>' + dateValue;		
+		}
+		//日期時間選擇器
+		$('#datepicker').datetimepicker({
+			format: 'YYYY-MM-DD'
+		});
 	</script>
+	
 </html>
