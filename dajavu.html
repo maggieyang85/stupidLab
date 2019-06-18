@@ -68,7 +68,8 @@
                         <li>遊戲過程請遵照工作人員指示，若因違規造成物品損壞，得視情況要求賠償</li>
                     </ol>
                     <hr>
-                    <h5 class="intro_title" data-toggle="collapse" data-target="#detail">簡介</h5>
+                    <h5 class="intro_title">簡介</h5>
+                    <a id="readmore-btn" href style="color: blue" data-toggle="collapse" data-target="#detail">閱讀更多</a>
                     <div id='detail' class="collapse">
                         <p>上次的奪命鎖鏈，你斷開了嗎？來試試看我們的全新力作 - 奪命記憶吧！</p>
                         <p>Deja Vu，似曾相識的感覺，好像曾經發生過，但又好像只是錯覺。但這些似曾相識的既視感真的只是錯覺嗎？還是是被遺忘的過去呢？</p>
@@ -112,6 +113,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+    <script>
+        $('#readmore-btn').click(e => {
+            $('#readmore-btn').hide()
+        })
+    </script>
 
 </body>
 

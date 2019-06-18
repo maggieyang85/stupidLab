@@ -72,7 +72,8 @@
                         <li>遊戲過程請遵照工作人員指示，若因違規造成物品損壞，得視情況要求賠償</li>
                     </ol>
                     <hr>
-                    <h5 class="intro_title" data-toggle="collapse" data-target="#detail">簡介</h5>
+                    <h5 class="intro_title">簡介</h5>
+                    <a id="readmore-btn" href style="color: blue" data-toggle="collapse" data-target="#detail">閱讀更多</a>
                     <div id='detail' class="collapse">
                         <p>「我們被鎖鏈鏈住了，要斷開鎖鏈才能離開這裡！」</p>
                         <p>「欸，那邊好像有東西，你快過去看看！」</p>
@@ -133,10 +134,10 @@
             },
         });
     </script>
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker1').datetimepicker();
-        });
+    <script>
+        $('#readmore-btn').click(e => {
+            $('#readmore-btn').hide()
+        })
     </script>
 </body>
 
