@@ -98,6 +98,7 @@ mysqli_set_charset($db,"utf8");//設定編碼
 //全補顯示
 
 $query2 = "SELECT * FROM customer_reservation";
+$query3 = "SELECT * FROM customer_reservation WHERE "
 //$stmt = $db -> prepare($query2);
 //$stmt -> execute();
 
