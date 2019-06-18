@@ -1,6 +1,6 @@
 <?php
 
-$activity_val = 0;    //活動編號
+$activity_val = "";   //活動名稱
 $activity_date = "";  //活動日期
 $activity_time = "";  //活動時間
 $activity_person = 0; //參加人數
@@ -19,10 +19,10 @@ if($_POST){
 	$customer_phone = $_POST['customer_phone'];
 	$customer_email = $_POST['customer_email'];
 
-	echo "You have selected :" .$activity_val;  // Displaying Selected Value
-	echo "Name :" .$customer_name; 
-	echo "Phone :" .$customer_phone; 
-	echo "Email :" .$customer_email; 
+	//echo "You have selected :" .$activity_val;  // Displaying Selected Value
+	//echo "Name :" .$customer_name; 
+	//echo "Phone :" .$customer_phone; 
+	//echo "Email :" .$customer_email; 
 }
 
 //資料庫連線
@@ -40,6 +40,24 @@ if (mysqli_connect_errno()) {
 mysqli_set_charset($db,"utf8");//設定編碼
 //mysqli_select_db($db,"reservation"); //連線狀態中更換資料庫
 //mysqli_close()//斷掉連接
+
+//insert
+$query = ("insert into customer_reservation value(?,?,?,?,?,?,?)");
+$stmt = $db -> prepare($query);
+$stmt -> bind_param("sissssi",$customer_name,$customer_phone,$customer_email,$activity_val,$activity_date,$activity_time,$activity_person);
+$stmt -> execute();
+
+	echo "<table>
+	<tr>
+	<th>姓名</th>
+	<th>電話</th>
+	<th>Email</th>
+	<th>活動名稱</th>
+	<th>活動日期</th>
+	<th>活動時間</th>
+	<th>人數</th>
+	</tr>
+	 ";
 
 
 ?>

@@ -95,5 +95,25 @@ if (mysqli_connect_errno()) {
 
 mysqli_set_charset($db,"utf8");//設定編碼
 
+//全補顯示
+
+$query2 = "SELECT * FROM customer_reservation";
+//$stmt = $db -> prepare($query2);
+//$stmt -> execute();
+
+while($result = $db -> query($query2)){
+	echo "<tr>";
+	echo "<td>" .$result-> name. "</td>";
+	echo "<td>" .$result-> phone. "</td>";
+	echo "<td>" .$result-> email. "</td>";
+	echo "<td>" .$result-> activity. "</td>";
+	echo "<td>" .$result-> date. "</td>";
+	echo "<td>" .$result -> time. "</td>";
+	echo "<td>" .$result -> number. "</td>";
+	echo "</tr>";
+
+};
+
+
 
 ?>
