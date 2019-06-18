@@ -48,44 +48,52 @@
 	<div class="container">
 		<form action="admin.php" method="post">
 			<div class="row">
-			<!-- 管理員登入 -->
-				<div class="col-md-3"></div>
+			<!-- 顯示所有訂單 -->
+				<div class="col-md-2">
+					<input class="btn btn-success" name="searchAll" type="submit" value="顯示全部訂單">
+				</div>
 				<div class="col-md-6">
 					<div class="input-group mb-3">
-					  	<div class="input-group-prepend">
-					    	<span class="input-group-text">管理員名稱</span>
-					  	</div>
-					  	<input type="text" class="form-control" id="admin_name" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-					</div>
-					<div class="input-group mb-3">
-					  	<div class="input-group-prepend">
-					    	<span class="input-group-text">管理員密碼</span>
-					  	</div>
-					  	<input type="text" class="form-control" id="admin_password" placeholder="Userpd" aria-label="Userpassword" aria-describedby="basic-addon1">
-					</div>
-					<center><input class="btn btn-outline-secondary" type="submit" value="登入" onclick="if (checkUser() == 'ture'){ window.open('admin.php')}" id="login"></center>
-					<br>
-					<!-- 登入錯誤訊息 -->
-					<div class="alert alert-danger fade" role="alert" id="loginAlert">
-					  Error!Please check your username & password!
+					  <input type="text" class="form-control" placeholder="search email" aria-label="search email" aria-describedby="basic-addon2">
+					  <div class="input-group-append">
+					  	<input class="btn btn-success" type="button" value="查詢">
+					  </div>
 					</div>
 				</div>
-				<div class="col-md-3"></div>
+				<div class="col-md-4">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="search name" aria-label="search name" aria-describedby="basic-addon2">
+					 	<div class="input-group-append">
+					    	<input class="btn btn-success" type="button" value="查詢">
+					  	</div>
+					</div>
+				</div>
 			</div>
 		</form>
 	</div>
 
 	<script type="text/javascript">
-
-		function checkUser(){
-			var user_name = document.getElementById("admin_name").value;
-			var user_password = document.getElementById("admin_password").value;
-			if(user_name == 'admin')&&(user_password == 'pass123'){
-				return 'ture'
-			}else{
-				return 'false'
-			}
-		}
+		
 	</script>
 </body>
 </html>
+
+
+
+<?php
+//資料庫連線
+$localhost = 'localhost';
+$user = 'root';
+$password = '';
+$database = 'reservation';
+ //進行連線
+$db = mysqli_connect($localhost, $user, $password, $database);
+if (mysqli_connect_errno()) {
+	echo ("Connect failed: ".mysqli_connect_error());
+	exit();
+}
+
+mysqli_set_charset($db,"utf8");//設定編碼
+
+
+?>
