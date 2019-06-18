@@ -7,8 +7,13 @@
 		<title>奪命鎖鏈1</title>
 		 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+         <script type="text/javascript" src="js/moment.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"></script>
+        
 		<link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/activities_info.css">
+        <style src="vuelendar/scss/vuelendar.scss"></style>
 	</head>
 	<body>
 		<header>
@@ -74,6 +79,11 @@
                     <p>這次，你受到了 Niceday 的委託，你將與你的團隊一同進入安和路巷內的命案現場，在封鎖的密室內對一起一家三口的滅門血案重啟調查。究竟，這起命案是命運無情的捉弄，是情感的糾結，還是巫術的詮釋？腳上鋃鐺作響的鎖鏈，又該如何掙脫呢？</p>
                 </div>
                 <div class="col-md-3">
+                    <div id="app">
+                        <p> {{ msg }} </p>
+                        <p v-text="msg"></p>
+                    </div>
+
                     <div class="activity_cash">
                         <p>活動開始時間:<br>2019/04/18</p>
                         <p>活動結束時間:<br>2019/05/31</p>
@@ -100,12 +110,26 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 				integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 				crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-				integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"   
+                integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
 				crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
 				integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
 				crossorigin="anonymous"></script>
 
+        <script>
+            new Vue({
+                  el: "#app",
+                  data: {
+                    msg: "我的第一個Vue應用(ง๑ •̀_•́)ง",
+                  },
+                });
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
 	</body>
 </html>
+
