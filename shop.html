@@ -79,10 +79,10 @@
 								活動名稱：
 								<select class="custom-select" name="activity_select" id="activity_select">
 									<option selected>Choose...</option>
-									<option value="1">奪命鎖鏈 1 Break Free</option>
-									<option value="2">奪命記憶</option>
-									<option value="3">顛倒之室</option>
-									<option value="3">醉後任務 THE SCHEME</option>
+									<option value="奪命鎖鏈1">奪命鎖鏈 1 Break Free</option>
+									<option value="奪命記憶">奪命記憶</option>
+									<option value="顛倒之室">顛倒之室</option>
+									<option value="醉後任務">醉後任務 THE SCHEME</option>
 								</select>
 
 								<br>
@@ -100,17 +100,27 @@
                 						時段：
                 						<select class="custom-select" name="activity_time" id="activity_time">
 											<option selected>Choose...</option>
-											<option value="1">上午場 10:30 - 12:10</option>
-											<option value="2">下午場 12:30 - 14:10</option>
-											<option value="3">下午場 14:30 - 16:10</option>
-											<option value="4">下午場 16:30 - 18:10</option>
-											<option value="5">下午場 18:30 - 20:10</option>
-											<option value="6">下午場 20:30 - 21:10</option>
+											<option value="10:30 - 12:10">上午場 10:30 - 12:10</option>
+											<option value="12:30 - 14:10">下午場 12:30 - 14:10</option>
+											<option value="14:30 - 16:10">下午場 14:30 - 16:10</option>
+											<option value="16:30 - 18:10">下午場 16:30 - 18:10</option>
+											<option value="18:30 - 20:10">下午場 18:30 - 20:10</option>
+											<option value="20:30 - 21:10">下午場 20:30 - 21:10</option>
 										</select>
                 					</div>
             					</div>
-								<br>
-								人數：<input type="" name="activity_person"><br>
+								人數：
+								<select class="custom-select" name="activity_person" id="activity_person">
+									<option selected>Choose...</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6人包場</option>
+									<option value="7">7人包場</option>
+									<option value="8">8人包場</option>
+								</select>
 							</div>
 						</div>
 					</div>
@@ -180,8 +190,12 @@
 			 var nameValue = document.getElementById("name").value;
 			 var phoneValue = document.getElementById("phone").value;
 			 var emailValue = document.getElementById("email").value;
+			 var activityValue = document.getElementById("activity_select").value;
 			 var dateValue = document.getElementById("datepicker").value;
-    		document.getElementById("reservation_info").innerHTML = nameValue + '<br>' + phoneValue + '<br>' + emailValue + '<br>' + dateValue;		
+			 var timeValue = document.getElementById("activity_time").value;
+			 var number = document.getElementById("activity_person").value;
+
+    		document.getElementById("reservation_info").innerHTML = '姓名：'+ nameValue + '<br>' + '電話：'+ phoneValue + '<br>' + 'Email：'+ emailValue + '<br>' + '活動名稱：'+ activityValue + '<br>' + '活動日期：'+ dateValue + '<br>' + '活動時間：'+ timeValue + '<br>' + '人數：'+ number;		
 		}
 		//日期時間選擇器
 		$('#datepicker').datetimepicker({
