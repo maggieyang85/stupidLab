@@ -45,35 +45,75 @@
         </nav>
 	</header>
 	<br>
-	<div class="container">
-		<form action="admin.php" method="post">
-			<div class="row">
+	<div class="container">	
+		<div class="row">
 			<!-- 顯示所有訂單 -->
-				<div class="col-md-2">
-					<input class="btn btn-success" name="searchAll" type="submit" value="顯示全部訂單">
-				</div>
-				<div class="col-md-6">
+			
+			<!-- <div class="col-md-2">
+				<form action="showAllDate.php" method="post">
+					<input class="btn btn-success" id="searchAll" type="submit" value="顯示全部訂單">
+				</form>
+			</div>
+			
+			<div class="col-md-4">
+				<form action="searchEmail.php" method="post">
 					<div class="input-group mb-3">
-					  <input type="text" class="form-control" placeholder="search email" aria-label="search email" aria-describedby="basic-addon2">
+					  <input type="text" class="form-control" name="email" placeholder="search email" aria-label="search email" aria-describedby="basic-addon2">
 					  <div class="input-group-append">
-					  	<input class="btn btn-success" type="button" value="查詢">
+					  	<input class="btn btn-success" type="submit" value="查詢">
 					  </div>
 					</div>
-				</div>
-				<div class="col-md-4">
+				</form>
+			</div>
+			
+			
+			<div class="col-md-3">
+				<form action="searchName.php" method="post">
 					<div class="input-group mb-3">
-						<input type="text" class="form-control" placeholder="search name" aria-label="search name" aria-describedby="basic-addon2">
+						<input type="text" class="form-control" name="name" placeholder="search name" aria-label="search name" aria-describedby="basic-addon2">
 					 	<div class="input-group-append">
-					    	<input class="btn btn-success" type="button" value="查詢">
+					    	<input class="btn btn-success" type="submit" value="查詢">
 					  	</div>
 					</div>
+				</form>
+			</div> 
+			<div class="col-md-3">
+				<form action="delete.php" method="post">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" name="name" placeholder="delete by name" aria-label="delete by name" aria-describedby="basic-addon2">
+					 	<div class="input-group-append">
+					    	<input class="btn btn-danger" type="submit" value="刪除">
+					  	</div>
+					</div>
+				</form>
+			</div>
+		</div>-->
+		<form action="delete.php" method="post">
+			<div class="input-group mb-3">
+				<input type="text" class="form-control" name="name" placeholder="delete by name" aria-label="delete by name" aria-describedby="basic-addon2">
+				<div class="input-group-append">
+					<input class="btn btn-danger" type="submit" value="刪除">
 				</div>
 			</div>
 		</form>
-	</div>
-
-	<script type="text/javascript">
 		
+	</div>
+	<div class="row">
+		<table>
+			<tr>
+				<th>姓名</th>
+				<th>電話</th>
+				<th>Email</th>
+				<th>活動名稱</th>
+				<th>活動日期</th>
+				<th>活動時間</th>
+				<th>人數</th>
+			</tr>
+		</table>
+		
+	</div>
+	<script type="text/javascript">
+
 	</script>
 </body>
 </html>
@@ -97,7 +137,7 @@ mysqli_set_charset($db,"utf8");//設定編碼
 
 //全補顯示
 
-$query2 = "SELECT * FROM customer_reservation";
+/*$query2 = "SELECT * FROM customer_reservation";
 $query3 = "SELECT * FROM customer_reservation WHERE "
 //$stmt = $db -> prepare($query2);
 //$stmt -> execute();
@@ -114,7 +154,25 @@ while($result = $db -> query($query2)){
 	echo "</tr>";
 
 };
+*/
+//$search_name = document.getElementById("name").value;
 
+$sql_query ="select * from `customer_reservation`";
+if($result = mysqli_query($db, $sql_query)){
+	//$num = mysqli_num_rows($db, $result);
+	while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+		/*echo "<tr>";
+	    echo "<td>".$row[0]."</td>";
+	    echo "<td>".$row[1]."</td>";
+	    echo "<td>".$row[2]."</td>";
+	    echo "<td>".$row[3]."</td>";
+	    echo "<td>".$row[4]."</td>";
+	    echo "<td>".$row[5]."</td>";
+	    echo "<td>".$row[6]."</td>";
+	    echo "</tr>";*/
+	    echo $row[0]."&nbsp&nbsp".$row[1]."&nbsp&nbsp".$row[2]." &nbsp&nbsp".$row[3]."&nbsp&nbsp".$row[4]."&nbsp&nbsp".$row[5]."&nbsp&nbsp".$row[6]."<br>";
+	};
+};
 
 
 ?>
