@@ -1,6 +1,7 @@
 .card{
 	background: ;
 }
+<<<<<<< HEAD
 
 /* Bootstrap css */
 @import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
@@ -16,3 +17,5 @@
 
 /* Propeller datetimepicker */
 @import "datetimepicker/css/pmd-datetimepicker.css";
+=======
+>>>>>>> backend
