@@ -88,11 +88,6 @@
                     </div>
             </div>
             <div class="col-md-3">
-                <div id="app">
-                    <p> {{ msg }} </p>
-                    <p v-text="msg"></p>
-                </div>
-
                 <div class="activity_cash">
                     <p>活動開始時間:<br>2019/04/18</p>
                     <p>活動結束時間:<br>2019/05/31</p>
@@ -125,15 +120,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
-
-    <script>
-        new Vue({
-            el: "#app",
-            data: {
-                msg: "我的第一個Vue應用(ง๑ •̀_•́)ง",
-            },
-        });
-    </script>
+        
     <script>
         $('#readmore-btn').click(e => {
             $('#readmore-btn').hide()
