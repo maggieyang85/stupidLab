@@ -16,15 +16,9 @@
 
 </head>
 <body>
-
 	<header>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
-
-	 <div class="nav-box">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html"><img src="images/logo.png"></a>
-
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -49,53 +43,34 @@
                 </ul>
             </div>
         </nav>
-
 	</header>
-
 	<br>
-	<div class="container">
-		<form action="admin.php" method="post">
-			<div class="row">
-			<!-- 管理員登入 -->
-				<div class="col-md-3"></div>
-				<div class="col-md-6">
-					<div class="input-group mb-3">
-					  	<div class="input-group-prepend">
-					    	<span class="input-group-text">管理員名稱</span>
-					  	</div>
-					  	<input type="text" class="form-control" id="admin_name" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-					</div>
-					<div class="input-group mb-3">
-					  	<div class="input-group-prepend">
-					    	<span class="input-group-text">管理員密碼</span>
-					  	</div>
-					  	<input type="text" class="form-control" id="admin_password" placeholder="Userpd" aria-label="Userpassword" aria-describedby="basic-addon1">
-					</div>
-					<center><input class="btn btn-outline-secondary" type="submit" value="登入" onclick="if (checkUser() == 'ture'){ window.open('admin.php')}" id="login"></center>
-					<br>
-					<!-- 登入錯誤訊息 -->
-					<div class="alert alert-danger fade" role="alert" id="loginAlert">
-					  Error!Please check your username & password!
-					</div>
-				</div>
-				<div class="col-md-3"></div>
-			</div>
-		</form>
-	</div>
-
-	<script type="text/javascript">
-
-		function checkUser(){
-			var user_name = document.getElementById("admin_name").value;
-			var user_password = document.getElementById("admin_password").value;
-
-			if(user_name == 'admin')&&(user_password == 'pass123'){
-
-				return 'ture'
-			}else{
-				return 'false'
-			}
-		}
-	</script>
+	
 </body>
 </html>
+
+<?php 
+	$localhost = 'localhost';
+	$user = 'root';
+	$password = '';
+	$database = 'reservation';
+	
+	$search_email =  $_POST['email'];
+	//進行連線
+	$db = mysqli_connect($localhost, $user, $password, $database);
+	if (mysqli_connect_errno()) {
+		echo ("Connect failed: ".mysqli_connect_error());
+		exit();
+	}
+
+	mysqli_set_charset($db,"utf8");//設定編碼
+	$sql_query ="select * from `customer_reservation`";
+	$sql_query = $sql_query + "where email="+$search_email;
+	log($sql_query);
+	if($result = mysqli_query($db, $sql_query)){
+		//$num = mysqli_num_rows($db, $result);
+		while ($row = mysqli_fetch_array($result, MYSQLI_NUM)){
+			print_r($row);
+		};
+	};
+?>
